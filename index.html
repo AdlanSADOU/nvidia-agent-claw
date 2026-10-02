@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An embodied AI agent inside a running game: it sees the world, uses game tools, and edits the scene from natural-language requests.">
+  <meta name="color-scheme" content="dark">
+  <title>Agent Bucko — NVIDIA Paris Claw Agent Challenge</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2317191b'/%3E%3Cpath d='M7 23V9l9 9 9-9v14' fill='none' stroke='%23b5e66a' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #f2f3ef; background: #111315; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { width: min(100% - 3rem, 64rem); margin: 0 auto; padding: 3.5rem 0 4rem; }
+    header { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1.25rem; margin-bottom: 1.5rem; }
+    h1 { margin: 0; font-size: 1.5rem; font-weight: 650; letter-spacing: -.04em; }
+    .challenge { margin: 0; color: #a5aaac; font-size: .875rem; line-height: 1.5; }
+    .video { position: relative; aspect-ratio: 16 / 9; background: #191d20; border: 1px solid #30363a; border-radius: .5rem; overflow: hidden; }
+    iframe { display: block; width: 100%; height: 100%; border: 0; }
+    .description { max-width: 48rem; padding-top: 2rem; }
+    h2 { margin: 0 0 1rem; font-size: clamp(1.6rem, 3.5vw, 2.15rem); line-height: 1.2; font-weight: 600; letter-spacing: -.035em; }
+    .description p { margin: 0 0 1rem; color: #bcc2c5; font-size: 1.0625rem; line-height: 1.75; }
+    .description .lead { color: #e1e5e6; }
+    .credit { margin: 2.25rem 0 0; color: #91989b; font-size: .875rem; line-height: 1.6; }
+    a { color: #b5e66a; text-underline-offset: .2em; }
+    a:focus-visible { outline: 2px solid #b5e66a; outline-offset: 5px; }
+    @media (max-width: 600px) {
+      main { width: min(100% - 2rem, 64rem); padding-top: 1.75rem; }
+      header { gap: .25rem; flex-direction: column; }
+      .description { padding-top: 1.5rem; }
+      .description p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Agent Bucko</h1>
+      <p class="challenge">NVIDIA Paris Claw Agent Challenge · 2026</p>
+    </header>
+
+    <section class="video" aria-label="Demo video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/0K2bqQ0tN1E"
+        title="Agent Bucko — challenge demo"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </section>
+
+    <section class="description" aria-labelledby="description-title">
+      <h2 id="description-title">An agent inside the game.</h2>
+      <p class="lead">Describe what you want to change in the world. The agent sees the scene through its own eyes, moves through it, places objects, and changes its appearance while the game keeps running.</p>
+      <p>Built into a custom C/C++ game engine, the agent turns a request into a sequence of actions. It calls game tools, reads and edits shader files, reloads the shaders, and takes screenshots through its own view to inspect the result. Each tool returns its outcome before the agent decides what to do next.</p>
+      <p>The goal is to make world building more direct: describe a scene, then let an agent carry out the work in the game itself while not hindering traditional editor workflows in any way. The agent is purely an addition</p>
+      <p>Now that it's built, I can further evaluate for a possible in-game interactive NPC/Companion, which presents its own challenges.</p>
+    </section>
+
+    <p class="credit">Built by <a href="https://github.com/AdlanSADOU">Adlan Sadou</a>.</p>
+  </main>
+</body>
+</html>
